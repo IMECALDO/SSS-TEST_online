@@ -6,8 +6,23 @@
     <title>Speech to Speech Synchronization Test (SSS-Test)</title>
 </head>
 <body>
+    
     <h1>Speech to Speech Synchronization Test (SSS-Test)</h1>
     <h2>Created by Carlos Magallanes-Aranda</h2>
     <h2>cmagallanx@gmail.com</h2>
+
+
+    <button onclick="playAudio()">Play Sound</button>
+
+    <audio id="example">
+        <source src="example_ExpAcc.wav" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function playAudio() {
+            document.getElementById("example").play();
+        }
+    </script>
+    
 </body>
 </html>
