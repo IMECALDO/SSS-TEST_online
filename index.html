@@ -12,35 +12,76 @@
     <h2>cmagallanx@gmail.com</h2>
 
     <h1>Introduction / Instructions</h1>
+
+
+    <h3>Test recording</h3>
+    <button onclick="startRecording_test()" id="recordButton_Test">Start Recording Test</button>
+    <p id="status">Idle</p>
     
     <button onclick="toggle_example()" id="audio_example_button">Play Example</button>
-        
+
     <audio id="audio_example">
         <source src="example_ExpAcc.wav" type="audio/mpeg">
     </audio>
+
+    <audio id="playback_test" controls></audio>
     
     <script>
+
+        ////////////////////////////////////////////////////////////////////////////////////////
+        ////////// PLay example scripts ////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////
+        
         let audio_example = document.getElementById("audio_example");
         let audio_example_button = document.getElementById("audio_example_button");
 
         function toggle_example() {
             if (audio_example.paused) {
                 audio_example.play();
-                audio_example_button.textContent = "Stop Audio";
+                audio_example_button.textContent = "Stop Example";
             } else {
                 audio_example.pause();
-                audio_example.currentTime = 0; // reset to start
-                audio_example_button.textContent = "Play Audio";
+                audio_example.currentTime = 0;
+                audio_example_button.textContent = "Play Example";
             }
         }
         audio_example.onended = function() {
-            audio_example_button.textContent = "Play Audio";
+            audio_example_button.textContent = "Play Example";
         };
+
+        ////////////////////////////////////////////////////////////////////////////////////////
+        ////////// Recording Example Test scripts //////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////
+
+        let mediaRecorder;
+        let audioChunks = [];
+
+        async function startRecording_test() {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+            mediaRecorder = new MediaRecorder(stream);
+            audioChunks = [];
+
+            mediaRecorder.start();
+            document.getElementById("status").textContent = "Recording...";
+
+            mediaRecorder.ondataavailable = event => {
+                audioChunks.push(event.data);
+            };
+
+            mediaRecorder.onstop = () => {
+                const audioBlob = new Blob(audioChunks, { type: "audio/wav" });
+                const audioUrl = URL.createObjectURL(audioBlob);
+                document.getElementById("playback_test").src = audioUrl;
+                document.getElementById("status").textContent = "Recording finished";
+            };
+
+            setTimeout(() => {
+                mediaRecorder.stop();
+            }, 5000); // 5 seconds
+        }
         
     </script>
-
-
-
     
 </body>
 </html>
