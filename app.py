@@ -8,8 +8,8 @@ CORS(app)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
-
+    return "Server running"
+    
 @app.route("/upload", methods=["POST"])
 def upload():
     file = request.files["audio"]
