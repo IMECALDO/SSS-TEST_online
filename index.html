@@ -11,18 +11,34 @@
     <h2>Created by Carlos Magallanes-Aranda</h2>
     <h2>cmagallanx@gmail.com</h2>
 
-
-    <button onclick="playAudio()">Play Sound</button>
-
+    <button onclick="toggleAudio()" id="audioButton">Play Audio</button>
+    
     <audio id="example">
         <source src="example_ExpAcc.wav" type="audio/mpeg">
     </audio>
 
     <script>
-        function playAudio() {
-            document.getElementById("example").play();
+        let audio = document.getElementById("example");
+        let button = document.getElementById("audioButton");
+
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                button.textContent = "Stop Audio";
+            } else {
+                audio.pause();
+                audio.currentTime = 0; // reset to start
+                button.textContent = "Play Audio";
+            }
         }
+
+        audio.onended = function() {
+            button.textContent = "Play Audio";
+        };
     </script>
+
+
+
     
 </body>
 </html>
