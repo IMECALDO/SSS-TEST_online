@@ -271,6 +271,8 @@
 
     <button onclick="Test_py()" id="Button_Test_py" >Test Py</button>
 
+    <p id="output_result_test"> Results_python_test </p>
+
     <script>
 
         async function Test_py() {
@@ -281,7 +283,7 @@
             });
 
             const result = await response.text();
-            document.getElementById("output_experiment").textContent = result;
+            document.getElementById("output_result_test").textContent = result;
         }
    
    </script>
