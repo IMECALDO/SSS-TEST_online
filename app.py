@@ -11,14 +11,16 @@ def home():
 
 def upload():
     file = request.files["audio"]
-    print(file.filename)
-    print(file.content_type)
 
     file.save("recording.wav")
 
     result = SSS_test_analysis.analyze("recording.wav")
 
     return result
+
+@app.route('/test', methods=['POST'])
+def test():
+    return "Python executed successfully"
 
 if __name__ == "__main__":
     app.run(debug=True)

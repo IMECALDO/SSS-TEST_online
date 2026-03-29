@@ -130,7 +130,6 @@
 
     </script>
 
-
     <!-- Main Experiment-->
     
     <h3>Experiment</h3>
@@ -270,6 +269,24 @@
    
    </script>
 
+    <button onclick="Test_py()" id="Button_Test_py" >Test Py</button>
+
+    <script>
+
+        async function Test_py() {
+
+            document.getElementById("status_experiment").textContent = "Recording...";
+
+            const response = await fetch('https://sss-test-l09c.onrender.com/test', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.text();
+            document.getElementById("output_experiment").textContent = result;
+        }
+   
+   </script>
 
 </body>
 </html>
