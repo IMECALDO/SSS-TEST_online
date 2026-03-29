@@ -18,15 +18,15 @@ Adapted
 
 """
 
-def analyze(filename):
+def analyze():
     
     import funcs
 
     #############################################################################################################
     # STEP 1: Loads the stimulus and both Runs of the subject's responses (signals)
     #############################################################################################################
-    fs, y     = funcs.read_WAV('static/stimulus_ExpAcc.wav')
-    fs_h, h = funcs.read_WAV(filename)
+    fs, y     = funcs.read_WAV('stimulus_ExpAcc.wav')
+    fs_h, h = funcs.read_WAV('stimulus_ExpAcc.wav')
 
     # Demeans and takes the envelope of the stimulus and of the spoken syllables
     y_env  = funcs.gets_envelope(y)
