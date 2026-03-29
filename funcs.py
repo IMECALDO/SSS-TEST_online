@@ -15,7 +15,6 @@ Adapted
 """
 
 import numpy as np
-import matplotlib.pyplot as plt
 from scipy import signal
 from scipy.signal import hilbert
 from scipy.fft import fft, fftfreq
@@ -185,83 +184,3 @@ def PLVevol(theta_stim, theta_sign, T, shift, fs):
 
     return plv_mean, plv, time
  
-def plotting(sg1, fs1, envelope1, fs_new1, xf1, yf1, plv1, time1, sg2, fs2, envelope2, fs_new2, xf2, yf2, plv2, time2):
-    '''
-    
-
-    Parameters
-    ----------
-    sg1 : Raw signal1.
-    fs1 : Sample frequency of raw signal1.
-    envelope1 : Envelope of signal1.
-    fs_new1 : New sample frequency of signal1.
-    xf1 : Vector of frequencies (signal1).
-    yf1 : Power of signal1.
-    plv1 : PLV between stimulus and signal1.
-    time1 : Timing vector1.
-    
-    sg2 : Raw signal2.
-    fs2 : Sample frequency of raw signal2.
-    envelope2 : Envelope of signal2.
-    fs_new2 : New sample frequency of signal2.
-    xf2 : Vector of frequencies (signal2).
-    yf2 : Power of signal2.
-    plv2 : PLV between stimulus and signal2.
-    time2 : Timing vector2.
-
-    Returns
-    -------
-    None.
-
-    '''
-    time_sg1 = np.linspace(0.0, len(sg1)/fs1, len(sg1), endpoint=False)
-    time_envelope1 = np.linspace(0.0, len(envelope1)/fs_new1, len(envelope1), endpoint=False)
-    time_sg2 = np.linspace(0.0, len(sg2)/fs2, len(sg2), endpoint=False)
-    time_envelope2 = np.linspace(0.0, len(envelope2)/fs_new2, len(envelope2), endpoint=False)
-    
-    plvMean1 = np.mean(plv1)
-    plvMean2 = np.mean(plv2)
-    
-    fig = plt.figure(figsize=(30, 20))
-    ax1 = fig.add_subplot(231)
-    ax2 = fig.add_subplot(232)
-    ax3 = fig.add_subplot(233)
-    bx1 = fig.add_subplot(234)
-    bx2 = fig.add_subplot(235)
-    bx3 = fig.add_subplot(236)
-    
-    ax1.set_title('Run 1: Speech signal plus envelope', fontsize=20, fontweight='bold')
-    ax1.plot(time_sg1, sg1, color='black', label='signal')
-    ax1.plot(time_envelope1, envelope1, color='red', label='envelope')
-    ax1.set_xlim([10, 15])
-    
-    ax2.set_title('Run 1: Produced envelope spectrum', fontsize=20, fontweight='bold')
-    ax2.plot(xf1, yf1, color='blue')
-    ax2.set_xlabel('Frequency (Hz)', fontsize=15)
-    ax2.set_ylabel('Power', fontsize=15)
-    ax2.set_xlim([0, 10])
-    
-    ax3.set_title('Run 1: Mean PLV = ' + str("{:.2f}".format(plvMean1)), fontsize=20, fontweight='bold')
-    ax3.plot(time1, plv1, 'ob')
-    ax3.set_xlabel('Time (sec)', fontsize=15)
-    ax3.set_ylabel('Speech Synchrony (PLV)', fontsize=15)
-    ax3.set_ylim([0, 1])
-    
-    bx1.set_title('Run 2: Speech signal plus envelope', fontsize=20, fontweight='bold')
-    bx1.plot(time_sg2, sg2, color='black', label='signal')
-    bx1.plot(time_envelope2, envelope2, color='red', label='envelope')
-    bx1.set_xlim([10, 15])
-    
-    bx2.set_title('Run 2: Produced envelope spectrum', fontsize=20, fontweight='bold')
-    bx2.plot(xf2, yf2, color='blue')
-    bx2.set_xlabel('Frequency (Hz)', fontsize=15)
-    bx2.set_ylabel('Power', fontsize=15)
-    bx2.set_xlim([0, 10])
-    
-    bx3.set_title('Run 2: Mean PLV = ' + str("{:.2f}".format(plvMean2)), fontsize=20, fontweight='bold')
-    bx3.plot(time2, plv2, 'ob')
-    bx3.set_xlabel('Time (sec)', fontsize=15)
-    bx3.set_ylabel('Speech Synchrony (PLV)', fontsize=15)
-    bx3.set_ylim([0, 1])   
-    
-    plt.show()

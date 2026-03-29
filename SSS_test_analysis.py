@@ -18,10 +18,10 @@ Adapted
 
 """
 
+import funcs
+
 def analyze(filename):
     
-    import funcs
-
     #############################################################################################################
     # STEP 1: Loads the stimulus and both Runs of the subject's responses (signals)
     #############################################################################################################
@@ -58,22 +58,6 @@ def analyze(filename):
 
     plv_mean, plv, time = funcs.PLVevol(theta_y, theta_h, T, shift, fs_new)
     plv_mean = round(plv_mean, 2)
+
     return(str(plv_mean))
-
-    #############################################################################################################
-    # Visualization of the data
-    #############################################################################################################
-    #funcs.plotting(h, fs_h, h1_env_filt_resamp, fs_new, xf1, yf1, plv1, time1, h2, fs_h2, h2_env_filt_resamp, fs_new, xf2, yf2, plv2, time2)
-
-    #############################################################################################################
-    # STEP 4: Both PLVs should pass a control of consistency between each other
-    #############################################################################################################
-    #flag_Exclude, plvs = funcs.Exclusion_Criteria(plv1, plv2, Test_Version)
-
-    #############################################################################################################
-    # STEP 5: If non of the exclusion criteria is reached, the probability of being High (1- prob of Low) is computed
-    #############################################################################################################
-    #if flag_Exclude == 0:
-    #    funcs.Probability_High(plvs, Test_Version)
-
 
