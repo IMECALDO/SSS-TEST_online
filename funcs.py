@@ -20,9 +20,7 @@ from scipy import signal
 from scipy.signal import hilbert
 from scipy.fft import fft, fftfreq
 import scipy.io.wavfile as wavfile
-import pickle
 from scipy.stats import norm
-import tkinter
 
 
 def read_WAV(file_name):
