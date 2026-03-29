@@ -258,31 +258,13 @@
             let formData = new FormData();
             formData.append("audio", blob, "recording.wav");
 
-            const response = await fetch('/upload', {
+            const response = await fetch('https://sss-test-l09c.onrender.com/test', {
                 method: 'POST',
                 body: formData
             });
 
             const result = await response.text();
             document.getElementById("output_experiment").textContent = result;
-        }
-   
-   </script>
-
-    <button onclick="Test_py()" id="Button_Test_py" >Test Py</button>
-
-    <p id="output_result_test"> Results_python_test </p>
-
-    <script>
-
-        async function Test_py() {
-
-            const response = await fetch('https://sss-test-l09c.onrender.com/test', {
-                method: 'POST',
-            });
-
-            const result = await response.text();
-            document.getElementById("output_result_test").textContent = result;
         }
    
    </script>
