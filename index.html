@@ -145,7 +145,7 @@
 
     <h3>Experiment Results</h3>
 
-    <p id="output_experiment"></p>
+    <p id="output_experiment"> Results </p>
 
     <!-- Main Experiment scrips -->
 
@@ -274,8 +274,6 @@
     <script>
 
         async function Test_py() {
-
-            document.getElementById("status_experiment").textContent = "Recording...";
 
             const response = await fetch('https://sss-test-l09c.onrender.com/test', {
                 method: 'POST',
