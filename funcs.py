@@ -22,7 +22,6 @@ from scipy.fft import fft, fftfreq
 import scipy.io.wavfile as wavfile
 from scipy.stats import norm
 
-
 def read_WAV(file_name):
     '''
     
