@@ -3,8 +3,6 @@ from flask_cors import CORS
 import SSS_test_analysis
 import os
 
-fetch("https://sss-test-l09c.onrender.com")
-
 app = Flask(__name__)
 CORS(app)
 
