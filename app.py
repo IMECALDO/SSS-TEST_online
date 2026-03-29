@@ -17,7 +17,11 @@ def test():
     filename = audio.filename
     audio.save(filename)
 
-    return f"Received: {filename}"
+    print(filename)
+
+    result = SSS_test_analysis.analyze(filename)
+
+    return f"PLV is: {result}"
 
 
 if __name__ == "__main__":
