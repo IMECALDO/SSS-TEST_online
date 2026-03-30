@@ -83,8 +83,8 @@
     <h1>Speech to Speech Synchronization Test (SSS-Test)</h1>
 
     <p>
-    Task created by <a href="https://www.nature.com/articles/s41593-019-0353-z">(Assaneo et al. 2019)</a>, 
-    and adapted to online setting by Carlos Magallanes-Aranda.
+    Task created by <a href="https://www.nature.com/articles/s41593-019-0353-z">(Assaneo et al. 2019)</a> <br>  
+    Adapted to an online setting by Carlos Magallanes-Aranda, cmagallanx@gmail.com   
     </p>
 
     <nav id="table_of_contets" aria-label="Table of contents">
@@ -110,6 +110,10 @@
     <!-- Test Recording-->
 
     <h3>Test recording</h3>
+
+    <p>
+    It's important that your microphone is functional. Test it, and if it works okay, move to the next step.
+    </p>    
 
     <button onclick="startRecording_test()" id="recordButton_Test" class="button">Start Recording Test</button>
     <p id="status_test">Idle</p>
@@ -154,13 +158,19 @@
 
     <h3>Training</h3>
 
+    <p>
+    Next up we have a training phase. It's very important for you to listen to the next audio of 10 seconds.
+    </p>    
+
     <button onclick="toggle_example()" id="audio_example_button" class="button">Play Example</button>
 
     <audio id="audio_example">
     <source src="example_ExpAcc.wav" type="audio/wav">
     </audio>
 
-    <br><br>
+    <p>
+    Now you try whisper the /tah/ to the same rhythm you heard it.
+    </p>
 
     <button onclick="startRecording_training()" id="recordButton_Train" class="button">Start Recording Training</button>
     <p id="status_train">Idle</p>
@@ -229,6 +239,10 @@
     
     <h3>Experiment</h3>
 
+    <p>
+    Now you will hear a strange train of syllables, whisper /tah/ and try to synchronize your speech to the stimulus.
+    </p>
+
     <button onclick="startExperiment()" id="recordButton_Experiment" class="button">Start Experiment</button>
     <p id="status_experiment">Idle</p>
 
@@ -240,7 +254,11 @@
 
     <h3>Experiment Results</h3>
 
-    <p id="output_experiment"> Results </p>
+    <p>
+    The synchronization value ranges from 0 to 1. Normally, low synchronizers are below 0.5 while high synchronizers are above 0.6
+    </p>
+
+    <p id="output_experiment"> Results Pending </p>
 
     <!-- Main Experiment scrips -->
 
