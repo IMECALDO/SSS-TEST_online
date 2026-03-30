@@ -1,22 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speech to Speech Synchronization Test (SSS-Test)</title>
+
+    <style>
+
+    :root {
+      --primary-color: #0056b3;
+      --background-color: #f9f9f9;
+      --text-color: #333;
+      --box-background-color: white;
+      --box-shadow-color: rgba(0, 0, 0, 0.1)
+    }
+
+    header {
+      margin-bottom: 30px
+    }
+
+    body {
+      font-family: Segoe UI, Helvetica, Arial, sans-serif;
+      margin: 0 auto;
+      padding: 20px;
+      max-width: 1000px;
+      background: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: var(--primary-color);
+      margin: 0 0 8px;
+      text-align: center;
+    }
+
+    .button {
+        padding: 12px 25px;
+        font-size: 16px;
+        font-weight: 600;
+        background: var(--primary-color);
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        color: rgb(255, 255, 255);   
+    }
+
+    .boxed-section {
+        text-align: left;
+        margin: 30px auto;
+        background-color: var(--box-background-color);
+        padding: 5px 25px;
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 12px var(--box-shadow-color);
+        transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    }
+
+    .faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #f1f1f1;
+    }
+
+    .faq-answer {
+    display: none;
+    padding: 10px;
+    border-left: 2px solid #ccc;
+    }
+
+    </style>
+
 </head>
+
+<header>
+
+    <h1>Speech to Speech Synchronization Test (SSS-Test)</h1>
+
+    <p>
+    Task created by <a href="https://www.nature.com/articles/s41593-019-0353-z">(Assaneo et al. 2019)</a>, 
+    and adapted to online setting by Carlos Magallanes-Aranda.
+    </p>
+
+    <nav id="table_of_contets" aria-label="Table of contents">
+      <strong>Contents:</strong>
+      <a href="#Instructions">Instructions</a>
+      <a href="#Introduction">Introduction</a>
+      <a href="#FAQ">FAQ</a>
+
+    </nav>
+
+</header>
+
 <body>
     
-    <h1>Speech to Speech Synchronization Test (SSS-Test)</h1>
-    <h2>Created by Carlos Magallanes-Aranda, cmagallanx@gmail.com</h2>
+    <section class="boxed-section" id="Instructions">
 
-    <h1>Introduction / Instructions</h1>
+    <h1>Instructions</h1>
+
+    </section>
+
+    <section class="boxed-section">
 
     <!-- Test Recording-->
 
     <h3>Test recording</h3>
 
-    <button onclick="startRecording_test()" id="recordButton_Test">Start Recording Test</button>
+    <button onclick="startRecording_test()" id="recordButton_Test" class="button">Start Recording Test</button>
     <p id="status_test">Idle</p>
 
     <audio id="playback_test" controls></audio>
@@ -59,7 +154,7 @@
 
     <h3>Training</h3>
 
-    <button onclick="toggle_example()" id="audio_example_button">Play Example</button>
+    <button onclick="toggle_example()" id="audio_example_button" class="button">Play Example</button>
 
     <audio id="audio_example">
     <source src="example_ExpAcc.wav" type="audio/wav">
@@ -67,7 +162,7 @@
 
     <br><br>
 
-    <button onclick="startRecording_training()" id="recordButton_Train">Start Recording Training</button>
+    <button onclick="startRecording_training()" id="recordButton_Train" class="button">Start Recording Training</button>
     <p id="status_train">Idle</p>
 
     <audio id="playback_train"></audio>
@@ -134,7 +229,7 @@
     
     <h3>Experiment</h3>
 
-    <button onclick="startExperiment()" id="recordButton_Experiment" >Start Experiment</button>
+    <button onclick="startExperiment()" id="recordButton_Experiment" class="button">Start Experiment</button>
     <p id="status_experiment">Idle</p>
 
     <audio id="playback_experiment"></audio>
@@ -269,5 +364,42 @@
    
    </script>
 
+    </section>
+
+    <section class="boxed-section" id="Introduction">
+
+    <h1>Introduction</h1>
+
+    </section>
+
+    <section class="boxed-section" id="FAQ">
+
+    <h1>Frequently Asked Questions (FAQ)</h1>
+
+    <button class="faq-question" onclick="toggleFAQ(this)">
+    Lorem Ipsum
+    </button>
+    <div class="faq-answer">
+    Lorem Ipsum
+    </div>
+
+    <button class="faq-question" onclick="toggleFAQ(this)">
+    Lorem Ipsum
+    </button>
+    <div class="faq-answer">
+    Lorem Ipsum
+    </div>
+
+    <script>
+    function toggleFAQ(button) {
+    const answer = button.nextElementSibling;
+    answer.style.display = answer.style.display === "block" ? "none" : "block";
+    }
+    </script>
+
+    </section>
+
+
 </body>
+
 </html>
