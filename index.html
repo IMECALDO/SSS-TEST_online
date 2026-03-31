@@ -178,7 +178,7 @@
     <h3>Training</h3>
 
     <p>
-    Next up we have a training phase. It's very important for you to listen to the next audio of 10 seconds.
+    Next up we have a training phase. It's very important for you to listen to the next audio (~10 seconds).
     </p>    
 
     <button onclick="toggle_example()" id="audio_example_button" class="button">Play Example</button>
@@ -188,7 +188,7 @@
     </audio>
 
     <p>
-    Now you try whisper the /tah/ to the same rhythm you heard it.
+    Now you try whisper the /tah/ to the same rhythm you heard it (~10 seconds).
     </p>
 
     <button onclick="startRecording_training()" id="recordButton_Train" class="button">Start Recording Training</button>
@@ -259,7 +259,7 @@
     <h3>Experiment</h3>
 
     <p>
-    Now you will hear a strange train of syllables, whisper /tah/ and try to synchronize your speech to the stimulus.
+    Now you will hear a strange train of syllables, whisper /tah/ and try to synchronize your speech to the stimulus (~60 seconds).
     </p>
 
     <button onclick="startExperiment()" id="recordButton_Experiment" class="button">Start Experiment</button>
@@ -274,7 +274,9 @@
     <h3>Experiment Results</h3>
 
     <p>
-    The synchronization value ranges from 0 to 1. Normally, low synchronizers are below 0.5 while high synchronizers are above 0.6
+    The synchronization value (PLV) ranges from 0 to 1. 
+    <br>
+    Normally, low synchronizers are below 0.5 while high synchronizers are above 0.6
     </p>
 
     <p id="output_experiment"> Results Pending </p>
