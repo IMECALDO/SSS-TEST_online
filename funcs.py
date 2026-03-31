@@ -24,7 +24,6 @@ from scipy.stats import norm
 def read_WAV(file_name):
     '''
     
-
     Parameters
     ----------
     file_name : Name of WAV file
