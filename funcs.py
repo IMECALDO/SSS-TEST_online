@@ -19,7 +19,6 @@ from scipy import signal
 from scipy.signal import hilbert
 from scipy.fft import fft, fftfreq
 import scipy.io.wavfile as wavfile
-from scipy.stats import norm
 
 def read_WAV(file_name):
     '''
@@ -90,37 +89,6 @@ def resample(y, fs_old, fs_new):
     '''
     y_resampled = y[::int(fs_old/fs_new)]
     return y_resampled
-
-def freqSpect(y, fs):
-    '''
-    
-
-    Parameters
-    ----------
-    y : Signal.
-    fs : Sample frequency of signal.
-
-    Returns
-    -------
-    xf : Vector of frequencies.
-    yf : Power of signal.
-
-    '''
-    y = y - np.mean(y)
-    N = len(y)
-    Ts = 1.0 / fs
-    
-    yf = fft(y)
-    xf = fftfreq(N, Ts)[:N//2]
-    
-    index10 = np.where(xf <= 10)
-    xf = xf[index10]
-    yf = yf[index10]
-    
-    yf = np.power(np.abs(yf),2)
-    yf = yf / max(yf)
-    
-    return xf, yf
 
 def angles(y):
     '''

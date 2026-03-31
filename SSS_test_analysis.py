@@ -42,9 +42,6 @@ def analyze(filename):
     #y_env_filt_resamp  = funcs.resample(y_env_filt, fs, fs_new)
     h_env_filt_resamp = funcs.resample(h_env_filt, fs_h, fs_new)
 
-    # Estimates the spectrum of the envelopes for visualization purposes.
-    # xf1, yf1 = funcs.freqSpect(h_env_filt_resamp, fs_new)
-
     #############################################################################################################
     # STEP 2 & 3: Computes the PLV between the produced and perceived filtered envelopes
     #############################################################################################################
