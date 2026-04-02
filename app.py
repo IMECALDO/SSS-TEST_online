@@ -21,6 +21,8 @@ def test():
 
     result = SSS_test_analysis.analyze(filename)
 
+    os.remove(filename)
+
     return f"PLV is: {result}"
 
 
