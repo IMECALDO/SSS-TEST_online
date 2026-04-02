@@ -17,7 +17,21 @@
     }
 
     header {
-      margin-bottom: 30px
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .header-img {
+        width: 100px;
+        height: auto;
+    }
+
+    .header-text {
+        max-width: 700px;
+        text-align: center;
     }
 
     body {
@@ -80,22 +94,30 @@
 
 <header>
 
-    <h1>Speech to Speech Synchronization Test (SSS-Test)</h1>
+    <img src="Figures/unam_logo.png" alt="Left image" class="header-img">
 
-    <p>
-    Task created by <a href="https://www.nature.com/articles/s41593-019-0353-z">(Assaneo et al., 2019)</a> <br>  
-    Adapted to an online setting by Carlos Magallanes-Aranda, cmagallanx@gmail.com   
-    </p>
+    <div class="header-text">
 
-    <nav id="table_of_contets" aria-label="Table of contents">
-        <strong>Contents:</strong>
-        <a href="#Introduction">Introduction</a>
-        <a href="#Instructions">Instructions</a>
-        <a href="#Science">Science</a>
-        <a href="#FAQ">FAQ</a>
-        <a href="#Contact">Contact</a>
+        <h1>Speech to Speech Synchronization Test (SSS-Test)</h1>
 
-    </nav>
+        <p>
+        Task created by <a href="https://www.nature.com/articles/s41593-019-0353-z">(Assaneo et al., 2019)</a> <br>  
+        Adapted to an online setting by Carlos Magallanes-Aranda, cmagallanx@gmail.com   
+        </p>
+
+        <nav id="table_of_contents" aria-label="Table of contents">
+            <strong>Contents:</strong>
+            <a href="#Introduction">Introduction</a>
+            <a href="#Instructions">Instructions</a>
+            <a href="#Science">Science</a>
+            <a href="#FAQ">FAQ</a>
+            <a href="#Contact">Contact</a>
+
+        </nav>
+
+    </div>
+
+    <img src="Figures/HABLAB_logo.jpg" alt="Right image" class="header-img">
 
 </header>
 
@@ -469,7 +491,9 @@
     <h1>Contact</h1>
 
     <p> 
-        For any inquiry or comment you may contact Carlos Magallanes-Aranda, cmagallanx@gmail.com.
+        This task was created by Carlos Magallanes-Aranda, PHD Student of the HABLAB.
+        <br>
+        For any inquiry or comment you may contact mail to cmagallanx@gmail.com.
         <br>
         Feedback is welcomed.
     </p>
