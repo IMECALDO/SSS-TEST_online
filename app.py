@@ -6,9 +6,9 @@ import SSS_test_analysis
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/")
-def home():
-    return "Backend running"
+@app.route("/health")
+def health():
+    return "OK"
 
 @app.route("/test", methods=["POST"])
 def test():

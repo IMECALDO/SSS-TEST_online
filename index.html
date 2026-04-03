@@ -121,6 +121,15 @@
 
 </header>
 
+<script>
+window.addEventListener('load', () => {
+    fetch('https://your-service-name.onrender.com/health')
+        .then(response => response.text())
+        .then(data => console.log('Backend awake:', data))
+        .catch(error => console.error(error));
+});
+</script>
+
 <body>
 
     <section class="boxed-section" id="Introduction">
