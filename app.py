@@ -8,6 +8,7 @@ CORS(app)
 
 @app.route("/health")
 def health():
+    print("up n running")
     return "OK"
 
 @app.route("/test", methods=["POST"])
@@ -17,11 +18,13 @@ def test():
     filename = audio.filename
     audio.save(filename)
 
-    print(filename)
+    print("uploaded file")
 
     result = SSS_test_analysis.analyze(filename)
 
     os.remove(filename)
+
+    print("deleted file")
 
     return f"PLV is: {result}"
 
