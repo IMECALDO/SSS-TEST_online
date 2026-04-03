@@ -121,16 +121,18 @@
 
 </header>
 
-<script>
-window.addEventListener('load', () => {
-    fetch('https://sss-test-l09c.onrender.com/health')
-        .then(response => response.text())
-        .then(data => console.log('Backend awake:', data))
-        .catch(error => console.error(error));
-});
-</script>
+
 
 <body>
+
+    <script>
+        window.addEventListener('load', () => {
+            fetch('https://sss-test-l09c.onrender.com/health')
+                .then(response => response.text())
+                .then(data => console.log('Backend awake:', data))
+                .catch(error => console.error(error));
+        });
+    </script>
 
     <section class="boxed-section" id="Introduction">
 
